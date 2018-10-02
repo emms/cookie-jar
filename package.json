@@ -1,16 +1,22 @@
 {
-  "name": "recipe-app",
+  "name": "cookie-jar",
   "version": "0.1.0",
   "private": true,
+  "author": "Emmi Linkola",
   "dependencies": {
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1"
   },
   "devDependencies": {
+    "prop-types": "15.6.2",
     "react-scripts": "2.0.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start-dev": "yarn start-react && yarn start-server",
+    "start-react": "react-scripts start",
+    "start-server": "node ./server",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
