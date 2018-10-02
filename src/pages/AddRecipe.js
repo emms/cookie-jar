@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { TextInput, ParagraphInput, IngredientInput } from '../components/RecipeInput'
+import { API_URL } from '../config'
+import { post } from '../api'
 
 class AddRecipe extends Component {
   constructor(props) {
@@ -24,7 +26,8 @@ class AddRecipe extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    console.log(this.state)
+    const apiUrl = API_URL + '/recipe'
+    post(apiUrl, this.state)
   }
 
   render() {
