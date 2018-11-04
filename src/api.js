@@ -8,5 +8,4 @@ export function post(url, data) {
   }
   return fetch(url, options)
     .then(response => (response.ok ? Promise.resolve(response) : Promise.reject(new Error(response.status))))
-    .then(response => response.json())
 } 

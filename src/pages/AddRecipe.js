@@ -10,7 +10,7 @@ class AddRecipe extends Component {
       ingredients: [],
       instructions: '',
       time: '',
-      title: ''
+      name: ''
     }
   }
 
@@ -31,17 +31,17 @@ class AddRecipe extends Component {
   }
 
   render() {
-    const { title, time, ingredients, instructions,  } = this.state
+    const { name, time, ingredients, instructions,  } = this.state
     return (
       <div className="add-recipe">
         <h2>Add a new recipe</h2>
         <form onSubmit={ this.handleSubmit }>
-          <TextInput description="Recipe title" name="title" value={ title } onChange={ this.handleChange } />
+          <TextInput description="Recipe name" name="name" value={ name } onChange={ this.handleChange } />
           <TextInput description="Time required to make the recipe" name="time" value={ time } onChange={ this.handleChange } />
           <div>
             <p>Ingredients:</p>
-            { ingredients.map((ingredient) => (
-              <div key={ ingredient.name }>
+            { ingredients.map((ingredient, i) => (
+              <div key={ i }>
                 <span>{ ingredient.name }</span>
                 <span>{ ingredient.amount }</span>
               </div>
