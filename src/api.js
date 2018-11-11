@@ -1,3 +1,13 @@
+export function get(url) {
+  const options = {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  return fetch(url, options)
+} 
+
 export function post(url, data) {
   const options = {
     method: 'POST',

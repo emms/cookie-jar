@@ -38,5 +38,9 @@ export async function getRecipe(recipeId) {
 }
 
 export async function getAllRecipes() {
-
+  try {
+    return await db.any('SELECT * FROM recipes')
+  } catch (error) {
+    console.log('error', error)
+  }
 }
