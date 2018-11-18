@@ -1,4 +1,4 @@
-exports.shorthands = undefined;
+exports.shorthands = undefined
 
 exports.up = (pgm) => {
   pgm.createTable('ingredients', {
@@ -17,4 +17,4 @@ exports.up = (pgm) => {
       references: 'recipes(id)'
     }
   })
-};
+}

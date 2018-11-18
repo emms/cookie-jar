@@ -1,23 +1,17 @@
-import cloudinary from 'cloudinary'
 import pgPromise from 'pg-promise'
 import pgFormat from 'pg-format'
+import { uploadToCloudinary } from './cloudinary'
 
 const pgp = pgPromise()
 const db = pgp(process.env.DATABASE_URL)
-
-function uploadImage(image) {
-  cloudinary.v2.uploader.upload('http://www.example.com/image.jpg', (error, result) => {
-    console.log(result, error)
-  })
-}
 
 export async function postRecipe(recipe) {
   const { name, time, instructions, ingredients, image } = recipe
 
   try {
-    uploadImage(image)
+    const uploadedImage = await uploadToCloudinary(image)
     const data = await db.tx(async t => {
-      const recipeQuery = await t.one('INSERT INTO recipes(name, time, instructions) VALUES ($1, $2, $3) RETURNING id', [ name, time, instructions ])
+      const recipeQuery = await t.one('INSERT INTO recipes(name, time, instructions, image_url) VALUES ($1, $2, $3, $4) RETURNING id', [ name, time, instructions, uploadedImage.url ])
       const ingredientsArr = ingredients.map(i => [i.name, i.amount, recipeQuery.id])
       // TODO is pg-format necessary? 
       const ingredientQuery = await t.none(pgFormat('INSERT INTO ingredients(name, amount, parent_recipe_id) VALUES %L', ingredientsArr))
