@@ -29,6 +29,7 @@ class RecipeList extends Component {
         <h2>Browse recipes</h2>
         { this.state.recipes.map(recipe => (
           <div className="recipe" key={recipe.id}>
+            <img src={ recipe.image_url } alt="" />
             <span>{recipe.name}</span>
             <span>{recipe.time}</span>
           </div>
