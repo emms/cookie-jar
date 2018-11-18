@@ -16,8 +16,8 @@ app.post('/recipe', async (req, res) => {
   res.sendStatus(200)
 })
 
-app.get('/recipe', async (req, res) => {
-  const recipe = await getRecipe(12)
+app.get('/recipe/:id', async (req, res) => {
+  const recipe = await getRecipe(req.params.id)
   res.json(recipe)
 })
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { get } from '../api'
 import { API_URL } from '../config'
 import { sleep } from '../utils'
+import { Link } from 'react-router-dom'
 
 async function getRecipes() {
   const res = await get(`${API_URL}/recipes`)
@@ -28,11 +29,11 @@ class RecipeList extends Component {
       <div>
         <h2>Browse recipes</h2>
         { this.state.recipes.map(recipe => (
-          <div className="recipe" key={recipe.id}>
+          <Link to={`/recipe/${recipe.id}`} className="browse__recipe" key={ recipe.id }>
             <img src={ recipe.image_url } alt="" />
             <span>{recipe.name}</span>
             <span>{recipe.time}</span>
-          </div>
+          </Link>
         )) }
       </div>
     )
