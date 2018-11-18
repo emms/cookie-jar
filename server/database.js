@@ -1,13 +1,21 @@
+import cloudinary from 'cloudinary'
 import pgPromise from 'pg-promise'
 import pgFormat from 'pg-format'
 
 const pgp = pgPromise()
 const db = pgp(process.env.DATABASE_URL)
 
+function uploadImage(image) {
+  cloudinary.v2.uploader.upload('http://www.example.com/image.jpg', (error, result) => {
+    console.log(result, error)
+  })
+}
+
 export async function postRecipe(recipe) {
-  const { name, time, instructions, ingredients } = recipe
+  const { name, time, instructions, ingredients, image } = recipe
 
   try {
+    uploadImage(image)
     const data = await db.tx(async t => {
       const recipeQuery = await t.one('INSERT INTO recipes(name, time, instructions) VALUES ($1, $2, $3) RETURNING id', [ name, time, instructions ])
       const ingredientsArr = ingredients.map(i => [i.name, i.amount, recipeQuery.id])
