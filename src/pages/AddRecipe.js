@@ -1,3 +1,4 @@
+import './AddRecipe.scss'
 import React, { Component } from 'react'
 import { TextInput, ParagraphInput, IngredientInput } from '../components/RecipeInput'
 import { API_URL } from '../config'
@@ -47,7 +48,6 @@ export default class AddRecipe extends Component {
     const { name, time, ingredients, instructions,  } = this.state
     return (
       <div className="add-recipe">
-        <h2>Add a new recipe</h2>
         <form onSubmit={ this.handleSubmit }>
           <TextInput description="Recipe name" name="name" value={ name } onChange={ this.handleChange } />
           <TextInput description="Time required to make the recipe" name="time" value={ time } onChange={ this.handleChange } />
@@ -55,7 +55,7 @@ export default class AddRecipe extends Component {
           <div>
             <p>Ingredients:</p>
             { ingredients.map((ingredient, i) => (
-              <div key={ i }>
+              <div key={ i } className="add-ingredients">
                 <span>{ ingredient.name }</span>
                 <span>{ ingredient.amount }</span>
               </div>

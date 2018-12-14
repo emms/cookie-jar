@@ -1,3 +1,4 @@
+import './RecipeInput.scss'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
@@ -44,7 +45,7 @@ export class IngredientInput extends Component {
   render() {
     const { name, amount } = this.state
     return (
-      <div>
+      <div className="ingredient-input">
         <TextInput description="Ingredient name" name="name" value={ name } onChange={ this.handleChange } />
         <TextInput description="Ingredient amount" name="amount" value={ amount } onChange={ this.handleChange } />
         <button type="button" onClick={ this.handleSubmit }>Add more ingredients</button>
