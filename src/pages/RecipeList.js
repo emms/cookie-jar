@@ -1,3 +1,5 @@
+import './RecipeList.scss'
+
 import React, { Component } from 'react'
 import { get } from '../api'
 import { API_URL } from '../config'
@@ -14,7 +16,7 @@ async function getRecipes() {
   return getRecipes()
 }
 
-class RecipeList extends Component {
+export default class RecipeList extends Component {
   state = {
     recipes: []
   }
@@ -26,18 +28,14 @@ class RecipeList extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Browse recipes</h2>
+      <div className="recipe-list">
         { this.state.recipes.map(recipe => (
-          <Link to={`/recipe/${recipe.id}`} className="browse__recipe" key={ recipe.id }>
-            <img src={ recipe.image_url } alt="" />
-            <span>{recipe.name}</span>
-            <span>{recipe.time}</span>
+          <Link to={`/recipe/${recipe.id}`} className="recipe" key={ recipe.id } style={ { backgroundImage: `url(${recipe.image_url})` } }>
+            <div className="recipe-name">{recipe.name}</div>
+            <div className="recipte-time">{recipe.time}</div>
           </Link>
         )) }
       </div>
     )
   }
 }
-
-export default RecipeList

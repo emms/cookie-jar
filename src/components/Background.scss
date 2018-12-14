@@ -1,0 +1,15 @@
+@import '../variables.scss';
+
+.background h1 {
+  margin: 100px auto;
+  color: #FFB21D;
+  font-size: 40px;
+  font-weight: 800;
+  font-family: 'Montserrat';
+  @media #{$for-tablet-portrait-up} {
+    font-size: 80px;
+  }
+  @media #{$for-desktop-up} {
+    font-size: 90px;
+  }
+}

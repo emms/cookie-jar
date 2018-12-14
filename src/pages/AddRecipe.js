@@ -5,7 +5,7 @@ import { post } from '../api'
 import Dropzone from 'react-dropzone'
 import { getDataUrl, resizeDataUrl } from '../utils'
 
-class AddRecipe extends Component {
+export default class AddRecipe extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -71,4 +71,3 @@ class AddRecipe extends Component {
   }
 }
 
-export default AddRecipe

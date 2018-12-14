@@ -13,7 +13,7 @@ async function getRecipe(id) {
   return getRecipe(id)
 }
 
-class Recipe extends Component {
+export default class Recipe extends Component {
   state = {
     recipe: {}
   }
@@ -43,5 +43,3 @@ class Recipe extends Component {
     )
   }
 }
-
-export default Recipe
