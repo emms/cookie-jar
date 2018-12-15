@@ -1,23 +1,31 @@
 @import '../variables.scss';
 
 .background {
-  margin-bottom: 100px;
+  margin-bottom: 30px;
 
-  h1 {
-    margin: 100px auto 30px;
+  @media #{$for-tablet-portrait-up} {
+    margin-bottom: 100px;
+  }
+
+  &>.title {
+    display: block;
+    margin: 50px auto 10px;
     color: $color-primary;
     font-size: 40px;
     font-weight: 800;
     font-family: 'Montserrat';
+    text-decoration: none;
+    
     @media #{$for-tablet-portrait-up} {
       font-size: 80px;
+      margin: 100px auto 30px;
     }
     @media #{$for-desktop-up} {
       font-size: 90px;
     }
   }
 
-  a {
+  &>.nav-link {
     text-decoration: none;
     color: $color-primary;
     margin: 0 20px;

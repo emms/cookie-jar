@@ -1,9 +1,9 @@
-import './RecipeInput.scss'
+import cx from './RecipeInput.module.scss'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export const TextInput = ({ description, ...rest }) => (
-  <label className="text-input">
+  <label className={ cx['text-input'] }>
     <span>{ description }</span>
     <input type="text" {...rest} />
   </label>
@@ -12,7 +12,7 @@ export const TextInput = ({ description, ...rest }) => (
 TextInput.propTypes = { description: PropTypes.string.isRequired }
 
 export const ParagraphInput = ({ description, ...rest }) => (
-  <label className="paragraph-input">
+  <label className={ cx['paragraph-input'] }>
     <span>{ description }</span>
     <textarea name="paragraph-text" cols="50" rows="10" {...rest} />
   </label>
@@ -45,7 +45,7 @@ export class IngredientInput extends Component {
   render() {
     const { name, amount } = this.state
     return (
-      <div className="ingredient-input">
+      <div className={ cx['ingredient-input'] }>
         <TextInput description="Ingredient name" name="name" value={ name } onChange={ this.handleChange } />
         <TextInput description="Ingredient amount" name="amount" value={ amount } onChange={ this.handleChange } />
         <button type="button" onClick={ this.handleSubmit }>Add more ingredients</button>

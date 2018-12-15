@@ -1,3 +1,4 @@
+import cx from './Recipe.module.scss'
 import React, { Component } from 'react'
 import { get } from '../api'
 import { API_URL } from '../config'
@@ -13,6 +14,25 @@ async function getRecipe(id) {
   return getRecipe(id)
 }
 
+const Ingredients = ({ ingredients }) => (
+  <div className={ cx['recipe-ingredients'] }>
+    <h3>Ingredients</h3>
+    { ingredients && ingredients.map(ingredient => (
+      <div className={ cx['recipe-ingredients-list'] } key={ ingredient.id }>
+        <span className={ cx['recipe-ingredients-name'] }>{ ingredient.name }</span>
+        <span className={ cx['recipe-ingredients-amount'] }>{ ingredient.amount }</span>
+      </div>
+    ))}
+  </div>
+)
+
+const Instructions = ({ instructions }) => (
+  <div className={ cx['recipe-instructions'] }>
+    <h3>Instructions</h3>
+    <span className={ cx['recipe-instructions-text'] }>{ instructions }</span>
+  </div>
+)
+
 export default class Recipe extends Component {
   state = {
     recipe: {}
@@ -26,18 +46,13 @@ export default class Recipe extends Component {
   render() {
     const { recipe } = this.state
     return (
-      <div>
-        <div className="recipe" key={recipe.id}>
-          <img src={ recipe.image_url } alt="" />
-          <span>{ recipe.name }</span>
-          <span>{ recipe.time }</span>
-          { recipe.ingredients && recipe.ingredients.map(ingredient => (
-            <div className="recipe__ingredients" key={ ingredient.id }>
-              <span>{ ingredient.name }</span>
-              <span>{ ingredient.amount }</span>
-            </div>
-          ))}
-          <span>{ recipe.instructions }</span>
+      <div className={ cx['recipe-page'] } key={recipe.id}>
+        <div className={ cx['recipe-image'] } style={ { backgroundImage: `url(${recipe.image_url})` } } />
+        <h2 className={ cx['recipe-name'] }>{ recipe.name }</h2>
+        <span>{ recipe.time }</span>
+        <div className={ cx['recipe-page-content'] }>
+          <Ingredients ingredients={ recipe.ingredients } />
+          <Instructions instructions={ recipe.instructions } />
         </div>
       </div>
     )

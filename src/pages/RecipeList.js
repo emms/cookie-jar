@@ -1,5 +1,4 @@
-import './RecipeList.scss'
-
+import cx from './RecipeList.module.scss'
 import React, { Component } from 'react'
 import { get } from '../api'
 import { API_URL } from '../config'
@@ -28,12 +27,12 @@ export default class RecipeList extends Component {
 
   render() {
     return (
-      <div className="recipe-list">
+      <div className={ cx['recipe-list'] }>
         { this.state.recipes.map(recipe => (
-          <Link to={`/recipe/${recipe.id}`} className="recipe" key={ recipe.id } style={ { backgroundImage: `url(${recipe.image_url})` } }>
-            <div className="recipe-overlay" />
-            <div className="recipe-name">{recipe.name}</div>
-            <div className="recipe-time">{recipe.time}</div>
+          <Link to={`/recipe/${recipe.id}`} className={ cx.recipe } key={ recipe.id } style={ { backgroundImage: `url(${recipe.image_url})` } }>
+            <div className={ cx['recipe-overlay'] } />
+            <div className={ cx['recipe-name'] }>{recipe.name}</div>
+            <div className={ cx['recipe-time'] }>{recipe.time}</div>
           </Link>
         )) }
       </div>
