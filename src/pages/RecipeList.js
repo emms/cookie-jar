@@ -30,9 +30,11 @@ export default class RecipeList extends Component {
       <div className={ cx['recipe-list'] }>
         { this.state.recipes.map(recipe => (
           <Link to={`/recipe/${recipe.id}`} className={ cx.recipe } key={ recipe.id } style={ { backgroundImage: `url(${recipe.image_url})` } }>
-            <div className={ cx['recipe-overlay'] } />
-            <div className={ cx['recipe-name'] }>{recipe.name}</div>
-            <div className={ cx['recipe-time'] }>{recipe.time}</div>
+            <div className={ cx['recipe-overlay-container'] }>
+              <div className={ cx['recipe-name'] }>{recipe.name}</div>
+              <div className={ cx['recipe-time'] }>{recipe.time}</div>
+              <div className={ cx['recipe-overlay'] } />
+            </div>
           </Link>
         )) }
       </div>
