@@ -1,7 +1,7 @@
 import cx from './index.module.scss'
 import React, { Component } from 'react'
 import Hero from '../../components/Hero'
-import FeaturedProjects from '../../containers/FeaturedProjects'
+import FeaturedRecipes from '../../containers/FeaturedRecipes'
 import SignUp from '../../containers/SignUp'
 
 export default class Landing extends Component {
@@ -9,7 +9,7 @@ export default class Landing extends Component {
     return (
       <div className={ cx['Landing'] }>
         <Hero />
-        <FeaturedProjects />
+        <FeaturedRecipes />
         <SignUp />
       </div>
     )
