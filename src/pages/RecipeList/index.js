@@ -1,8 +1,8 @@
-import cx from './RecipeList.module.scss'
+import cx from './index.module.scss'
 import React, { Component } from 'react'
-import { get } from '../api'
-import { API_URL } from '../config'
-import { sleep } from '../utils'
+import { get } from '../../api'
+import { API_URL } from '../../utils/config'
+import { sleep } from '../../utils/utils'
 import { Link } from 'react-router-dom'
 
 async function getRecipes() {

@@ -1,4 +1,4 @@
-import cx from './RecipeInput.module.scss'
+import cx from './index.module.scss'
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 

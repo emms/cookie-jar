@@ -1,10 +1,10 @@
-import cx from './AddRecipe.module.scss'
+import cx from './index.module.scss'
 import React, { Component } from 'react'
-import { TextInput, ParagraphInput, IngredientInput } from '../components/RecipeInput'
-import { API_URL } from '../config'
-import { post } from '../api'
+import { TextInput, ParagraphInput, IngredientInput } from '../../components/RecipeInput'
+import { API_URL } from '../../utils/config'
+import { post } from '../../api'
 import Dropzone from 'react-dropzone'
-import { getDataUrl, resizeDataUrl } from '../utils'
+import { getDataUrl, resizeDataUrl } from '../../utils/utils'
 
 export default class AddRecipe extends Component {
   constructor(props) {

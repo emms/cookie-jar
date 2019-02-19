@@ -1,4 +1,4 @@
-@import '../variables.scss';
+@import '../../variables.scss';
 
 .recipe-list {
   width: 100%;
@@ -12,7 +12,6 @@
     width: 90%;
     height: 350px;
     margin: 50px auto;
-    box-shadow: 0 2px 10px #555;
     text-decoration: none;
     color: #FFF;
     background-size: cover;
@@ -60,5 +59,6 @@
     left: 0;
     z-index: 0;
     background-color: rgba(0,0,0,0.5);
+    box-shadow: 0 2px 10px #555;
   }
 }
