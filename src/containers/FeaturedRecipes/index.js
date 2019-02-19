@@ -11,9 +11,9 @@ export default class FeaturedRecipes extends Component {
     return (
       <div className={ cx['featured-recipes'] }>
         <div className={ cx['featured-cards'] }>
-          <Card title="Cookies" image={ PestoPasta } />
-          <Card title="Pesto pasta" image={ PestoPasta } />
-          <Card title="Cookies" image={ PestoPasta } />
+          <Card id="20" title="Cookies" image={ PestoPasta } />
+          <Card id="21" title="Pesto pasta" image={ PestoPasta } />
+          <Card id="20" title="Cookies" image={ PestoPasta } />
         </div>
         <Link to="/browse">
           <button>Browse all recipes</button>
