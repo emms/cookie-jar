@@ -7,8 +7,10 @@ import SignUp from '../../containers/SignUp'
 export default class Landing extends Component {
   render() {
     return (
-      <div className={ cx['Landing'] }>
-        <Hero />
+      <div className={ cx['landing'] }>
+        <div className={ cx['hero-container'] }>
+          <Hero />
+        </div>
         <FeaturedRecipes />
         <SignUp />
       </div>

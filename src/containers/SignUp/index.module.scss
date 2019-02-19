@@ -1,10 +1,14 @@
 @import '../../variables.scss';
 
 .sign-up {
-  padding: $spacing-small;
+  padding: $spacing-small-mobile;
   text-align: center;
   background-color: $color-background-accent;
   color: #FFF;
+
+  @media #{$for-tablet-portrait-up} {
+    padding: $spacing-small;
+  }
 
   @media #{$for-tablet-landscape-up} {
     padding: $spacing;
@@ -22,6 +26,7 @@ p {
 }
 
 .sign-in-container {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   margin: 40px auto;
 }

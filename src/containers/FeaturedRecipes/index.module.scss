@@ -3,7 +3,12 @@
 .featured-recipes {
   box-sizing: border-box;
   width: 100%;
-  padding: $spacing-small;
+  padding: $spacing-small-mobile;
+  padding-bottom: $spacing-small;
+
+  @media #{$for-tablet-portrait-up} {
+    padding: $spacing-small;
+  }
 
   @media #{$for-tablet-landscape-up} {
     padding: $spacing;

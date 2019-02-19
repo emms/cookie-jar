@@ -1,3 +1,14 @@
-.Landing {
+@import '../../variables.scss';
+
+.landing {
   text-align: center;
+}
+
+.hero-container {
+  height: 75vh;
+  width: 100%;
+
+  @media #{$for-tablet-portrait-up} {
+    height: 75vh;
+  }
 }
