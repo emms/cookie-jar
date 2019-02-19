@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const FeaturedProjects = props => (
-  <div />
-)
-
-export default FeaturedProjects
+export default class FeaturedProjects extends Component {
+  render () {
+    return (
+      <div />
+    )
+  }
+}

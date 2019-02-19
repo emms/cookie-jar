@@ -3,7 +3,9 @@ $for-tablet-portrait-up: "(min-width: 600px)";
 $for-tablet-landscape-up: "(min-width: 900px)";
 $for-desktop-up: "(min-width: 1200px)";
 
-$color-primary: #B1D9E6;
-$color-buttons: #A8DDBC;
+$color-links-and-buttons: #A8DDBC;
+$color-background: #F8F8F8;
+$color-background-light: #FFF;
+$color-background-accent: #B1D9E6;
 
-$font: 'Montserrat';
+$font: "Montserrat", sans-serif;

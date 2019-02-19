@@ -1,0 +1,9 @@
+@import '../../variables.scss';
+
+.Footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  padding: 15px;
+  text-align: center;  
+  background-color: $color-background-light;
+}
