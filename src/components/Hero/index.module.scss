@@ -18,6 +18,10 @@
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 20px;
+
+  @media #{$for-tablet-portrait-up} {
+    grid-gap: 30px;
+  }
 }
 
 .title-first-row {
@@ -25,6 +29,10 @@
 
   @media #{$for-tablet-portrait-up} {
     font-size: 50px;
+  }
+
+  @media #{$for-desktop-up} {
+    font-size: 72px;
   }
 }
 
@@ -35,6 +43,10 @@
   @media #{$for-tablet-portrait-up} {
     font-size: 100px;
   }
+
+  @media #{$for-desktop-up} {
+    font-size: 140px;
+  }
 }
 
 .subtitle {
@@ -43,6 +55,10 @@
 
   @media #{$for-tablet-portrait-up} {
     font-size: 28px;
+  }
+
+  @media #{$for-desktop-up} {
+    font-size: 40px;
   }
 }
 
@@ -56,5 +72,10 @@
   @media #{$for-tablet-portrait-up} {
     width: 100px;
     height: 120px;
+  }
+
+  @media #{$for-desktop-up} {
+    width: 140px;
+    height: 180px;
   }
 }
