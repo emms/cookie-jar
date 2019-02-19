@@ -5,10 +5,10 @@
 }
 
 .hero-container {
-  height: 75vh;
+  height: 70vh;
   width: 100%;
 
   @media #{$for-tablet-portrait-up} {
-    height: 75vh;
+    height: 60vh;
   }
 }

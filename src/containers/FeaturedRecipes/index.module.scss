@@ -3,8 +3,28 @@
 .featured-recipes {
   box-sizing: border-box;
   width: 100%;
+  position: relative;
   padding: $spacing-small-mobile;
   padding-bottom: $spacing-small;
+
+  &::before, &::after {
+    content: "";
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: calc(50% - 30px);
+    background-color: $color-background;
+  }
+
+  &::before {
+    top: -25px;
+  }
+
+  &::after {
+    bottom: -25px;
+  }
 
   @media #{$for-tablet-portrait-up} {
     padding: $spacing-small;
