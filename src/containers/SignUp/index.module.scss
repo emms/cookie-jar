@@ -2,10 +2,26 @@
 
 .sign-up {
   padding: $spacing-small;
+  text-align: center;
   background-color: $color-background-accent;
+  color: #FFF;
+
+  @media #{$for-tablet-landscape-up} {
+    padding: $spacing;
+  }
 }
 
 h3 {
-  color: #FFF;
   text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  max-width: $content-max-width;
+  margin: auto;
+}
+
+.sign-in-container {
+  width: 350px;
+  margin: 40px auto;
 }

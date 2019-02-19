@@ -1,0 +1,17 @@
+@import '../../variables.scss';
+
+.text-input {
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  font-family: $font;
+  color: $color-text;
+
+  &::placeholder {
+    color: #999;
+  }
+}
