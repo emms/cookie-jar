@@ -1,15 +1,7 @@
 @import '../../variables.scss';
 
 .header {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 30px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background-color: $color-background-light;
-  text-align: right;
+  display: none;
 
   &.header--transparent {
     background-color: transparent;
@@ -21,6 +13,19 @@
 
   &>a {
     color: $color-text;
+  }
+
+  @media #{$for-tablet-landscape-up} {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: $color-background-light;
+    text-align: right;
   }
 }
 
