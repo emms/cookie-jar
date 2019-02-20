@@ -1,33 +1,26 @@
-@import '../variables.scss';
+@import '../../variables.scss';
 
-.Header {
-  margin-bottom: 30px;
+.header {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: $color-background-light;
+  text-align: right;
 
-  @media #{$for-tablet-portrait-up} {
-    margin-bottom: 100px;
+  &.header--transparent {
+    background-color: transparent;
   }
 
-  &>.title {
-    display: block;
-    margin: 50px auto 10px;
-    color: $color-primary;
-    font-size: 40px;
-    font-weight: 800;
-    font-family: 'Montserrat';
-    text-decoration: none;
-    
-    @media #{$for-tablet-portrait-up} {
-      font-size: 80px;
-      margin: 100px auto 30px;
-    }
-    @media #{$for-desktop-up} {
-      font-size: 90px;
-    }
+  &>* {
+    padding: 0 20px;
   }
 
-  &>.nav-link {
-    text-decoration: none;
-    color: $color-primary;
-    margin: 0 20px;
+  &>a {
+    color: $color-text;
   }
 }
+

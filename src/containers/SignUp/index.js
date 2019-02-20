@@ -3,7 +3,7 @@ import cx from './index.module.scss'
 import SignIn from '../../components/SignIn'
 
 const SignUp = props => (
-  <div className={ cx['sign-up'] }>
+  <div className={ cx['sign-up'] } id="SignUp">
     <h3>Start your<br/>own recipe box</h3>
     <div className={ cx['sign-in-container'] }>
       <SignIn />
