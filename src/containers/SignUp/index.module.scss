@@ -3,8 +3,7 @@
 .sign-up {
   padding: $spacing-small-mobile;
   text-align: center;
-  background-color: $color-background-accent;
-  color: #FFF;
+  background-color: $color-background-light;
 
   @media #{$for-tablet-portrait-up} {
     padding: $spacing-small;
@@ -21,12 +20,12 @@ h3 {
 }
 
 p {
-  max-width: $content-max-width;
+  max-width: 500px;
   margin: auto;
 }
 
 .sign-in-container {
   width: 100%;
   max-width: 350px;
-  margin: 40px auto;
+  margin: 40px auto 60px auto;
 }

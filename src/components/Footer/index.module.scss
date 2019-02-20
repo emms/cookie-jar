@@ -5,6 +5,10 @@
   grid-row-end: 3;
   padding: 20px;
   text-align: center;  
-  background-color: $color-background-light;
-  color: $color-text;
+  background-color: $color-primary;
+  color: #FFF;
+
+  a {
+    color: #FFF;
+  }
 }

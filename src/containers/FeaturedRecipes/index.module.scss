@@ -3,35 +3,24 @@
 .featured-recipes {
   box-sizing: border-box;
   width: 100%;
+  height: 100%;
   position: relative;
   padding: $spacing-small-mobile;
   padding-bottom: $spacing-small;
-
-  &::before, &::after {
-    content: "";
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    left: calc(50% - 30px);
-    background-color: $color-background;
-  }
-
-  &::before {
-    top: -25px;
-  }
-
-  &::after {
-    bottom: -25px;
-  }
+  padding-top: 0;
 
   @media #{$for-tablet-portrait-up} {
     padding: $spacing-small;
+    padding-top: 0;
   }
 
   @media #{$for-tablet-landscape-up} {
     padding: $spacing;
+    padding-top: 0;
+  }
+
+  button {
+    position: relative;
   }
 }
 
@@ -39,6 +28,7 @@
   max-width: $content-max-width;
   margin: auto;
   padding-bottom: $spacing-small;
+  position: relative;
 
   &>*:not(:last-child) {
     display: block;
@@ -49,7 +39,7 @@
     }
   }
 
-  @media #{$for-tablet-landscape-up} {
+  @media #{$for-tablet-portrait-up} {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 3fr 4fr;
@@ -74,4 +64,14 @@
       grid-row: 2 / 2;
     }
   }
+}
+
+.featured-bg {
+  background-color: $color-background-medium;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  clip-path: polygon(0 50%, 100% 10%, 100% 100%, 0 100%); 
 }

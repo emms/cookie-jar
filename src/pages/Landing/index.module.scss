@@ -5,10 +5,10 @@
 }
 
 .hero-container {
-  height: 70vh;
+  height: 650px;
   width: 100%;
 
-  @media #{$for-tablet-portrait-up} {
-    height: 60vh;
-  }
+  @media #{$for-tablet-landscape-up} {
+    height: 700px;
+  }  
 }

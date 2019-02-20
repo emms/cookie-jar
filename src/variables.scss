@@ -3,15 +3,17 @@ $for-tablet-portrait-up: "(min-width: 600px)";
 $for-tablet-landscape-up: "(min-width: 900px)";
 $for-desktop-up: "(min-width: 1200px)";
 
-$color-links-and-buttons: #A8DDBC;
-$color-background: #F8F8F8;
+$color-primary: #EBAA34;
+$color-links-and-buttons: #9AC7AB;
+$color-background: #EFEFEF;
 $color-background-light: #FFF;
-$color-background-accent: #B1D9E6;
-$color-text: #5B5B5B;
+$color-background-medium: #F6F6F6;
+$color-text: #707070;
 
 $font: "Montserrat", sans-serif;
+$font-headings: "Knewave", sans-serif;
 
-$content-max-width: 1200px;
+$content-max-width: 1000px;
 
 $spacing: 120px;
 $spacing-small: 60px;
