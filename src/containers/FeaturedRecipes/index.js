@@ -5,6 +5,7 @@ import Card from '../../components/Card'
 import PestoPasta from '../../images/pesto-pasta.jpg'
 import Cookies from '../../images/cookies.jpg'
 import SweetPotatoSoup from '../../images/sweet-potato-soup.jpg'
+import UtensilsIcon from '../../images/utensils-icon.png'
 
 export default class FeaturedRecipes extends Component {
   render () {
@@ -21,6 +22,7 @@ export default class FeaturedRecipes extends Component {
         <Link to="/browse">
           <button>Browse all recipes</button>
         </Link>
+        <img src={ UtensilsIcon } className={ cx['utensils-icon'] } />
       </div>
     )
   }

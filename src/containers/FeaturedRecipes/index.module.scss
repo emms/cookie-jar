@@ -5,13 +5,10 @@
   width: 100%;
   height: 100%;
   position: relative;
-  padding: $spacing-small-mobile;
-  padding-bottom: $spacing-small;
-  padding-top: 0;
+  padding: 0 $spacing-mini $spacing-small $spacing-mini;
 
   @media #{$for-tablet-portrait-up} {
-    padding: $spacing-small;
-    padding-top: 0;
+    padding: 0 $spacing-small $spacing $spacing-small;
   }
 
   @media #{$for-tablet-landscape-up} {
@@ -73,5 +70,18 @@
   position: absolute;
   left: 0;
   top: 0;
-  clip-path: polygon(0 50%, 100% 10%, 100% 100%, 0 100%); 
+  clip-path: polygon(0 25%, 100% 5%, 100% 100%, 0 100%);
+
+  @media #{$for-tablet-portrait-up} {
+    clip-path: polygon(0 50%, 100% 10%, 100% 100%, 0 100%);
+  }
+}
+
+.utensils-icon {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  height: 80px;
+  z-index: 1;
 }
