@@ -26,8 +26,12 @@ h3 {
 }
 
 p {
-  max-width: 500px;
+  max-width: 400px;
   margin: auto;
+
+  @media #{$for-tablet-landscape-up} {
+    max-width: 500px;
+  }
 }
 
 .sign-in-container {
@@ -39,10 +43,15 @@ p {
 .sign-up-img {
   position: absolute;
   bottom: -10%;
-  right: -30%;
-  width: 100%;
+  right: -40%;
+  width: 150%;
   max-width: 1200px;
   transform: rotate(-35deg);
+
+  @media #{$for-tablet-portrait-up} {
+    width: 100%;
+    right: -30%;
+  }
 
   @media #{$for-desktop-up} {
     right: -20%;

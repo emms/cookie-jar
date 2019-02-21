@@ -10,7 +10,7 @@ const SignUp = props => (
     <div className={ cx['sign-in-container'] }>
       <SignIn />
     </div>
-    <p>Cookie Jar is your digital recipe box, where you can store your favourite recipes. Donec suscipit rutrum lacinia. Donec dui erat, rutrum ut eros sed, molestie eleifend purus. Nulla ac dolor a lectus tristique fringilla. Maecenas eu pulvinar augue, at suscipit eros. </p>
+    <p>Cookie Jar is your digital recipe box, where you can store your favourite recipes. Donec suscipit rutrum lacinia. Donec dui erat, rutrum ut eros sed, molestie eleifend purus. Nulla ac dolor a lectus tristique fringilla. </p>
   </div>
 )
 
