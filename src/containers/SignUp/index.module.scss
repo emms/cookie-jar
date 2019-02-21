@@ -1,9 +1,15 @@
 @import '../../variables.scss';
 
 .sign-up {
+  position: relative;
   padding: $spacing-small-mobile;
   text-align: center;
   background-color: $color-background-light;
+  overflow: hidden;
+
+  > * {
+    position: relative;
+  }
 
   @media #{$for-tablet-portrait-up} {
     padding: $spacing-small;
@@ -28,4 +34,17 @@ p {
   width: 100%;
   max-width: 350px;
   margin: 40px auto 60px auto;
+}
+
+.sign-up-img {
+  position: absolute;
+  bottom: -10%;
+  right: -30%;
+  width: 100%;
+  max-width: 1200px;
+  transform: rotate(-35deg);
+
+  @media #{$for-desktop-up} {
+    right: -20%;
+  }
 }

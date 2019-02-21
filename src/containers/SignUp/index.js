@@ -1,9 +1,11 @@
 import React from 'react'
 import cx from './index.module.scss'
 import SignIn from '../../components/SignIn'
+import SignUpImg from '../../images/sign-up-img.jpg'
 
 const SignUp = props => (
   <div className={ cx['sign-up'] } id="SignUp">
+    <img src={ SignUpImg } className={ cx['sign-up-img'] } />
     <h3>Start your<br/>own recipe box</h3>
     <div className={ cx['sign-in-container'] }>
       <SignIn />
