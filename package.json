@@ -25,7 +25,8 @@
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
     "react-router-hash-link": "1.2.1",
-    "resize-image": "0.1.0"
+    "resize-image": "0.1.0",
+    "smoothscroll-polyfill": "^0.4.3"
   },
   "devDependencies": {
     "npm-run-all": "4.1.3",

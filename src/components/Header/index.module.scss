@@ -1,31 +1,153 @@
 @import '../../variables.scss';
 
 .header {
-  display: none;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  text-align: right;
 
   &.header--transparent {
     background-color: transparent;
   }
 
-  &>* {
-    padding: 0 20px;
-  }
-
   &>a {
-    color: $color-text;
+    display: none;
   }
 
   @media #{$for-tablet-landscape-up} {
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
     background-color: $color-background-light;
-    text-align: right;
+
+    &>* {
+      padding: 0 20px;
+    }
+  
+    &>a {
+      display: inline;
+      color: $color-text;
+    }
   }
 }
 
+.hamburger-menu {
+  background-color: transparent;
+  vertical-align: middle;
+  position: relative;
+  width: 30px;
+  height: 25px;
+  padding: 0;
+
+  div {
+    width: 30px;
+    height: 5px;
+    border-radius: 2px;
+    background-color: $color-text;
+    margin-bottom: 5px;
+    position: absolute;
+    left: 0;
+    transition: 250ms ease-in-out;
+  }
+
+  div:first-child {
+    top: 0;
+  }
+
+  div:nth-child(2) {
+    top: 10px;
+  }
+
+  div:nth-child(3) {
+    top: 20px;
+  }
+
+  &.hamburger-menu--open {
+
+    div:first-child {
+      top: 10px;
+      transform: rotate(45deg);
+    }
+
+    div:nth-child(2) {
+      width: 0;
+      opacity: 0;
+    }
+  
+    div:nth-child(3) {
+      top: 10px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  @media #{$for-tablet-landscape-up} {
+    display: none;
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  pointer-events: none;
+
+  &::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    background-color: $color-background-light;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  & > a {
+    position: relative;
+    margin-bottom: 40px;
+    color: inherit;
+    line-height: 30px;
+    opacity: 0;
+    transform: translate3d(20px, 0, 0);
+    transition-property: opacity, transform;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.navigation--open {
+  pointer-events: all;
+
+  &>* {
+    position: fixed;
+  }
+
+  &::before {
+    opacity: 1;
+  }
+
+  & > a {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-delay: 200ms;
+    transition-duration: 400ms;
+  }
+
+  @media #{$for-tablet-landscape-up} {
+    display: none;
+  }
+}
