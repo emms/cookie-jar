@@ -1,0 +1,62 @@
+@import '../../variables.scss';
+
+.categories {
+  box-sizing: border-box;
+  padding: $spacing $spacing-mini;
+  margin-top: 80px;
+  align-content: center;
+
+  &>* {
+    height: 450px;
+    padding-bottom: 40px;
+  }
+
+  @media #{$for-tablet-portrait-up} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 400px 400px 400px;
+    grid-template-areas:
+      "card1 card2"
+      "card3 card3"
+      "card4 card5"
+    ;
+    grid-gap: 40px;
+    padding: $spacing-small;
+
+    &>* {
+      padding-bottom: 0;
+      height: auto;
+    }
+
+    &>:nth-child(2) {
+      grid-area: card3;
+    }
+  }
+
+  @media #{$for-desktop-up} {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 450px 450px;
+    grid-template-areas:
+      "card1 card2 card3"
+      "card4 card2 card5"
+    ;
+    grid-gap: 40px;
+    padding: $spacing-small;
+
+    &>:first-child {
+      grid-area: card1;
+    }
+    &>:nth-child(2) {
+      grid-area: card2;
+    }
+    &>:nth-child(3) {
+      grid-area: card3;
+    }
+    &>:nth-child(4) {
+      grid-area: card4;
+    }
+    &>:nth-child(5) {
+      grid-area: card5;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import AddRecipe from './pages/AddRecipe'
 import Recipe from './pages/Recipe'
 import Landing from './pages/Landing'
+import Categories from './pages/Categories'
 import Footer from './components/Footer'
 import Header from './components/Header'
 
@@ -13,6 +14,7 @@ class App extends Component {
         <React.Fragment>
           <Header />
           <Route exact path="/" component={ Landing } />
+          <Route path="/browse" component={ Categories } />
           <Route path="/add-recipe" component={ AddRecipe } />
           <Route path="/recipe/:id" component={ Recipe } />
           <Footer />
