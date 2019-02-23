@@ -16,8 +16,8 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 400px 400px 400px;
     grid-template-areas:
-      "card1 card2"
-      "card3 card3"
+      "card1 card3"
+      "card2 card2"
       "card4 card5"
     ;
     grid-gap: 40px;
@@ -27,21 +27,6 @@
       padding-bottom: 0;
       height: auto;
     }
-
-    &>:nth-child(2) {
-      grid-area: card3;
-    }
-  }
-
-  @media #{$for-desktop-up} {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 450px 450px;
-    grid-template-areas:
-      "card1 card2 card3"
-      "card4 card2 card5"
-    ;
-    grid-gap: 40px;
-    padding: $spacing-small;
 
     &>:first-child {
       grid-area: card1;
@@ -58,5 +43,16 @@
     &>:nth-child(5) {
       grid-area: card5;
     }
+  }
+
+  @media #{$for-desktop-up} {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 450px 450px;
+    grid-template-areas:
+      "card1 card2 card3"
+      "card4 card2 card5"
+    ;
+    grid-gap: 40px;
+    padding: $spacing-small;
   }
 }

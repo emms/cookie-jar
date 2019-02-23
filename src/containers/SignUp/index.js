@@ -5,7 +5,7 @@ import SignUpImg from '../../images/sign-up-img.jpg'
 
 const SignUp = props => (
   <div className={ cx['sign-up'] } id="SignUp">
-    <img src={ SignUpImg } className={ cx['sign-up-img'] } />
+    <img src={ SignUpImg } className={ cx['sign-up-img'] } alt="" />
     <h3>Start your<br/>own recipe box</h3>
     <div className={ cx['sign-in-container'] }>
       <SignIn />

@@ -15,14 +15,14 @@ export default class FeaturedRecipes extends Component {
       <div className={ cx['featured-recipes'] }>
         <div className={ cx['featured-bg'] } />
         <div className={ cx['featured-cards'] }>
-          <Card id="20" title="Cookies" image={ Cookies } />
-          <Card id="21" title="Sweet Potato Soup" image={ SweetPotatoSoup } />
-          <Card id="20" title="Pesto Pasta" image={ PestoPasta } />
+          <Card linkTo="/recipe/20" title="Cookies" image={ Cookies } />
+          <Card linkTo="/recipe/21" title="Sweet Potato Soup" image={ SweetPotatoSoup } />
+          <Card linkTo="/recipe/20" title="Pesto Pasta" image={ PestoPasta } />
         </div>
         <Link to="/browse">
           <button>Browse all recipes</button>
         </Link>
-        <img src={ UtensilsIcon } className={ cx['utensils-icon'] } />
+        <img src={ UtensilsIcon } className={ cx['utensils-icon'] } alt="" />
       </div>
     )
   }

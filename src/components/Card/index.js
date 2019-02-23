@@ -3,7 +3,7 @@ import cx from './index.module.scss'
 import { Link } from 'react-router-dom'
 
 const Card = props => (
-  <Link to={ `/recipe/${props.id}` } className={ cx['card-link'] }>
+  <Link to={ props.linkTo } className={ cx['card-link'] }>
     <div className={ cx['card'] }>
       <div className={ cx['image-container'] }>
         <img src={ props.image } alt="" />

@@ -5,12 +5,24 @@ import { Link } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 import { withRouter } from 'react-router'
 
-const MenuLinks = props => (
-  <React.Fragment>
-    <Link to="/browse" className={ cx['nav-link'] } onClick={ props.onClick }>Browse</Link>
-    <HashLink smooth to="/#SignUp" className={ cx['nav-link'] } onClick={ props.onClick }>Login / Sign in</HashLink>
-  </React.Fragment>
-)
+const MenuLinks = props => {
+  console.log(props)
+  const logoClasses = classNames(
+    cx['nav-logo'],
+    !props.showLogo && cx['nav-logo--hidden'],
+  )
+  return (
+    <React.Fragment>
+      <Link to="/" className={ logoClasses }>
+        <span>RECIPE</span>
+        <br/>
+        <span>BOX</span>
+      </Link>
+      <Link to="/browse" className={ cx['nav-link'] } onClick={ props.onClick }>Browse</Link>
+      <HashLink smooth to="/#SignUp" className={ cx['nav-link'] } onClick={ props.onClick }>Login / Sign in</HashLink>
+    </React.Fragment>
+  )
+}
 
 const HamburgerMenu = props => (
   <button className={ props.classes } onClick={ props.onClick }>
@@ -45,10 +57,10 @@ class Header extends Component {
     return (
       <div className={ headerClasses }>
         <nav className={ navigationClasses }>
-          <MenuLinks onClick={ this.toggleMenu } />
+          <MenuLinks onClick={ this.toggleMenu } showLogo />
         </nav>
         <HamburgerMenu classes={ menuClasses } onClick={ this.toggleMenu } />
-        <MenuLinks />
+        <MenuLinks showLogo={ this.props.location.pathname !== "/" } />
       </div>
     )
   }
